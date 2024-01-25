@@ -15,7 +15,7 @@
     // Fonction pour surligner les mots et afficher une fenêtre flottante
     function highlightTextAndShowPopup() {
         var targetSelector = "div.jobs__item-cell.jobs__item-cell--success.text-center.p-0"; // Sélecteur de la balise
-        var wordsToSearch = ['1331', '134', '835', '20', '2839']; // Mots à rechercher
+        var wordsToSearch = ['1331', '134', '835', '342', '175']; // Mots à rechercher
         var style = "background-color: blue;"; // Style de surlignage
         var results = {}; // Stocker les mots trouvés et leur occurrence
 
