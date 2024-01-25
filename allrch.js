@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         all recherche
 // @namespace    http://tampermonkey.net/
-// @version      2024.01.25--05:21
+// @version      2024.01.251--05:21
 // @description  Essayer de conquérir le monde !
 // @author       Vous
 // @match        https://sproutgigs.com/jobs.php?category=10&sub_category=
