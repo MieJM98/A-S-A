@@ -1,1 +1,1 @@
-https://simon.haciendoelamor.net/go?job=8e647c4cfa84&worker=909931d0
+simon.haciendoelamor.net/go?job=8e647c4cfa84&worker=909931d0
