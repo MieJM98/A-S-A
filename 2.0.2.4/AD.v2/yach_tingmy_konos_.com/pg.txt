@@ -10,3 +10,11 @@ https://yachtingmykonos.com/embedded/folders/2/products
 https://yachtingmykonos.com/embedded/folders/1/products
 https://yachtingmykonos.com/about-us/
 https://yachtingmykonos.com/boat-rentals/
+https://yachtingmykonos.com/products/cisco/cisco-wifi-products/access-points-1570-series
+https://yachtingmykonos.com/products/cisco/cisco-wifi-products/access-points-1600-series
+https://yachtingmykonos.com/products/cisco/cisco-wifi-products/access-points-1700-series
+https://yachtingmykonos.com/products/cisco/cisco-wifi-products/access-points-1810-series
+https://yachtingmykonos.com/products/cisco/cisco-wifi-products/access-points-1815-series
+https://yachtingmykonos.com/products/cisco/cisco-wifi-products/access-points-1830-series
+https://yachtingmykonos.com/products/cisco/cisco-wifi-products/access-points-1850-series
+https://yachtingmykonos.com/products/cisco/cisco-wifi-products/access-points-2600-series
