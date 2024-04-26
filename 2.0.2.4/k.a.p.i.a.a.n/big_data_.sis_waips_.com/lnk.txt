@@ -1,0 +1,17 @@
+https://bigdata.siswaips.com/publish/aws-big-data/5-comprehensive-aspects-big-data-aws
+https://bigdata.siswaips.com/publish/aws-big-data/aws-services-every-data-scientist-uses
+https://bigdata.siswaips.com/publish/aws-big-data/centrally-managed-aws-backup-for-amazon-cloud
+https://bigdata.siswaips.com/publish/aws-big-data/guide-to-doing-big-data-with-aws
+https://bigdata.siswaips.com/publish/aws-big-data/understand-aws-big-data-and-solutions
+https://bigdata.siswaips.com/publish/azure-big-data/azure-analytics-services-and-azure-hdinsight
+https://bigdata.siswaips.com/publish/azure-big-data/azure-big-data-steps-to-building-your-solution
+https://bigdata.siswaips.com/publish/azure-big-data/azure-data-lake-and-azure-nosql
+https://bigdata.siswaips.com/publish/azure-big-data/azure-hdinsight-best-practices
+https://bigdata.siswaips.com/publish/big-data/big-data-analytics
+https://bigdata.siswaips.com/publish/big-data/big-data-technologies
+https://bigdata.siswaips.com/publish/big-data/the-role-of-big-data-in-banking
+https://bigdata.siswaips.com/publish/big-data/what-is-big-data
+https://bigdata.siswaips.com/publish/hadoop/apache-hadoop-vs-apache-spark
+https://bigdata.siswaips.com/publish/hadoop/hadoop-architecture-in-detail
+https://bigdata.siswaips.com/publish/hadoop/how-hadoop-works-internally
+https://bigdata.siswaips.com/publish/hadoop/what-is-hadoop
