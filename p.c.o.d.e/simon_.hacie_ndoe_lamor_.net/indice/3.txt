@@ -1,1 +1,1 @@
-simon.haciendoelamor.net/go?job=04472d918af0&worker=bd89e38e
+04472d918af0&worker=bd89e38e
