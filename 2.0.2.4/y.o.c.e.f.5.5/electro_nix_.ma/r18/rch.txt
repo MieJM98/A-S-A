@@ -1,13 +1,5 @@
-DEDICATED SERVER
-VPS CLOUD
-UNLIMITED HOSTING
-WEB HOSTING
-WORDPRESS HOSTING
-ΑΙ
-CRM
-ERP
-SOFTWARE
-loan
-Insurance
-import
-export
+Insurance 
+Loans
+Mortgage 
+Attorney
+Credit
