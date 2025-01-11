@@ -22,7 +22,7 @@ from novaprinter import prettyPrinter
 
 class cpasbien():
     # This is a fake url only for engine associations in file download
-    url = "http://www.cpasbien.fr"
+    url = "http://www.torrent911.lol/home"
     name = "Cpasbien (french)"
     results_per_page = 50
     supported_categories = {
@@ -35,7 +35,7 @@ class cpasbien():
 
     def find_url(self):
         """Retrieve url from github repository, so it can work even if the url change"""
-        link_github = "https://raw.githubusercontent.com/MarcBresson/cpasbien/master/cpasbien.url"
+        link_github = "https://raw.githubusercontent.com/MieJM98/A-S-A/refs/heads/main/trnt.url"
         try:
             req = urllib.request.Request(link_github, headers=headers)
             response = urllib.request.urlopen(req)
