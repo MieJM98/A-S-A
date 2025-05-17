@@ -5,6 +5,7 @@
 // @description  try to take over the world!
 // @author       You
 // @match        https://sproutgigs.com/jobs.php?sort=NEWEST
+// @match        https://sproutgigs.com/jobs.php?category=10
 // @match        https://sproutgigs.com/jobs.php?category=10&sort=TTR
 // @match        https://sproutgigs.com/jobs.php?category=10&level=starter&sort=
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=sproutgigs.com
