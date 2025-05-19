@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Job Info Extractor Telecharger Tout + Titre + hide  tout
 // @namespace    http://tampermonkey.net/
-// @version      2025.05.19--18:45
+// @version      2025.30.19--18:45
 // @description  Extract job information including title and download it as a text file
 // @match        https://sproutgigs.com/jobs.php?category=10&*
 // @match        https://sproutgigs.com/jobs.php?category=20
