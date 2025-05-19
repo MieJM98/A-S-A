@@ -1,0 +1,116 @@
+// ==UserScript==
+// @name         Job Info Extractor Telecharger Tout + Titre
+// @namespace    http://tampermonkey.net/
+// @version      2024.11.17--18:45
+// @description  Extract job information including title and download it as a text file
+// @match        https://sproutgigs.com/jobs.php?category=10&*
+// @match        https://sproutgigs.com/jobs.php?category=20
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    function downloadData(filename, data) {
+        const element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(data));
+        element.setAttribute('download', filename);
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    }
+
+    function getCurrentDateTime() {
+        const now = new Date();
+        const day = now.getDate();
+        const month = now.toLocaleString('default', { month: 'short' });
+        const year = now.getFullYear();
+        const hours = now.getHours();
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        return `${day}.${month}.${year}-${hours}.${minutes}`;
+    }
+
+    function scrollToBottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function extractJobInfo() {
+        const scrollInterval = setInterval(() => {
+            scrollToBottom();
+        }, 1000);
+
+        setTimeout(function() {
+            clearInterval(scrollInterval);
+
+            const jobItems = document.querySelectorAll('a.jobs__item.jobs__item--client-starter, a.jobs__item.jobs__item--client-starter.is-premium');
+            let jobInfo = '';
+
+            jobItems.forEach(item => {
+                const linkUrl = item.href;
+
+                const titleText = item.querySelector('.js-job-item-name') ?
+                                  item.querySelector('.js-job-item-name').textContent.trim() : 'N/A';
+
+                // Extraction corrigée du nom de l'employeur sans les symboles
+                const employerBlock = item.querySelector('.jobs__item-cell.jobs__item-cell--emp.small');
+                let employerText = 'N/A';
+                if (employerBlock) {
+                    const spans = employerBlock.querySelectorAll('span');
+                    spans.forEach(span => {
+                        if (!span.classList.contains('symbol')) {
+                            const txt = span.textContent.trim();
+                            if (txt.length > 0) {
+                                employerText = txt;
+                            }
+                        }
+                    });
+                }
+
+                const doneText = item.querySelector('.jobs__item-cell.jobs__item-cell--done.d-none.d-md-block.small') ?
+                                 item.querySelector('.jobs__item-cell.jobs__item-cell--done.d-none.d-md-block.small').textContent.trim() : 'N/A';
+
+                const successCells = item.querySelectorAll('.jobs__item-cell.jobs__item-cell--success');
+                let successText = 'N/A';
+                successCells.forEach(cell => {
+                    const cellText = cell.textContent.trim();
+                    if (cellText.includes('%') || cellText.includes('FIRST JOB') || cellText.includes('Locked')) {
+                        successText = cellText;
+                    }
+                });
+
+                const levelText = item.querySelector('.jobs__item-cell--level.small') ?
+                                  item.querySelector('.jobs__item-cell--level.small').textContent.trim() : 'N/A';
+
+                const paymentText = item.querySelector('.jobs__item-cell--payment') ?
+                                    item.querySelector('.jobs__item-cell--payment').textContent.trim() : 'N/A';
+
+                const ttrText = item.querySelector('.jobs__item-cell--ttr.d-none.d-md-block.text-center') ?
+                                item.querySelector('.jobs__item-cell--ttr.d-none.d-md-block.text-center').textContent.trim() : 'N/A';
+
+                jobInfo += `Titre : ${titleText}\nEmployeur : ${employerText}\nLien : ${linkUrl}\nTerminé : ${doneText}\nSuccès : ${successText}\nNiveau : ${levelText}\nPaiement : ${paymentText}\nTTR : ${ttrText}\n\n`;
+            });
+
+            const filename = `Beloa-${getCurrentDateTime()}.txt`;
+            downloadData(filename, jobInfo);
+        }, 10000);
+    }
+
+    const button = document.createElement('button');
+    button.innerText = '📥 Télécharger Tout';
+    button.style.position = 'fixed';
+    button.style.bottom = '10px';
+    button.style.right = '10px';
+    button.style.zIndex = 1000;
+    button.style.padding = '10px 20px';
+    button.style.backgroundColor = '#28a745';
+    button.style.color = 'white';
+    button.style.border = 'none';
+    button.style.borderRadius = '8px';
+    button.style.fontSize = '14px';
+    button.style.cursor = 'pointer';
+    button.style.boxShadow = '2px 2px 6px rgba(0,0,0,0.2)';
+
+    button.addEventListener('click', extractJobInfo);
+    document.body.appendChild(button);
+})();
