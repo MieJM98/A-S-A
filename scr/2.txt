@@ -1,0 +1,191 @@
+// ==UserScript==
+// @name         regi combo test
+// @namespace    http://tampermonkey.net/
+// @version      2025-04-30
+// @description  Scan automatique + extraction des jobs sur SproutGigs
+// @author       You
+// @match        https://sproutgigs.com/jobs.php?sort=NEWEST
+// @match        https://sproutgigs.com/jobs.php?category=10&sort=TTR
+// @match        https://sproutgigs.com/jobs.php?category=20&sort=COST
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=sproutgigs.com
+// @grant        GM_xmlhttpRequest
+// @connect      raw.githubusercontent.com
+// ==/UserScript==
+
+(function () {
+    'use strict';
+
+    const PLAGES_URL = "https://raw.githubusercontent.com/MieJM98/A-S-A/refs/heads/main/scr/rch.json";
+
+    GM_xmlhttpRequest({
+        method: "GET",
+        url: PLAGES_URL,
+        onload: function (response) {
+            try {
+                const plages = JSON.parse(response.responseText);
+
+                let intervalId;
+                let countdownIntervalId;
+                const options = ["Most Recent", "Buyers followed"];
+                let currentOptionIndex = 0;
+                const targetTexts = [];
+
+                plages.forEach(([start, end]) => {
+                    for (let i = start; i <= end; i++) {
+                        for (let p = 90; p <= 100; p++) {
+                            targetTexts.push(i + " / " + p + "%");
+                        }
+                    }
+                });
+
+                targetTexts.push("4907 / 97%", "89 / 93%");
+
+                let countdownDisplay;
+                let countdownTime;
+
+                function createCountdownDisplay() {
+                    countdownDisplay = document.createElement('div');
+                    countdownDisplay.style.position = 'fixed';
+                    countdownDisplay.style.bottom = '10px';
+                    countdownDisplay.style.right = '150px';
+                    countdownDisplay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+                    countdownDisplay.style.color = 'white';
+                    countdownDisplay.style.padding = '15px';
+                    countdownDisplay.style.borderRadius = '5px';
+                    countdownDisplay.style.zIndex = '1000';
+                    countdownDisplay.style.fontSize = '16px';
+                    document.body.appendChild(countdownDisplay);
+                }
+
+                function updateCountdownDisplay(time) {
+                    countdownDisplay.textContent = "07.11.24   :              " + Math.floor(time) + "s";
+                }
+
+                function getRandomInterval() {
+                    return Math.floor(Math.random() * (8000 - 7000 + 1)) + 7000;
+                }
+
+                function clickNextOption() {
+                    const nextOption = options[currentOptionIndex];
+                    clickOption(nextOption);
+                    currentOptionIndex = (currentOptionIndex + 1) % options.length;
+                }
+
+                function clickOption(optionText) {
+                    const dropdownItems = document.getElementsByClassName("dropdown-item");
+                    for (const item of dropdownItems) {
+                        if (item.innerText === optionText) {
+                            item.click();
+                            break;
+                        }
+                    }
+                }
+
+                function listTexts() {
+                    const elements = document.getElementsByClassName('jobs__item-cell--success');
+                    const counts = {};
+                    targetTexts.forEach(text => counts[text] = 0);
+
+                    for (const element of elements) {
+                        const text = element.textContent.trim();
+                        if (counts.hasOwnProperty(text)) {
+                            counts[text]++;
+                        }
+                    }
+
+                    const foundText = Object.keys(counts).find(text => counts[text] > 0);
+                    if (foundText) {
+                        clearInterval(intervalId);
+                        clearInterval(countdownIntervalId);
+                        alert("🎯 Texte trouvé : " + foundText + " (x" + counts[foundText] + ")");
+                    } else {
+                        clickNextOption();
+                        countdownTime = getRandomInterval() / 1000;
+                        updateCountdownDisplay(countdownTime);
+
+                        countdownIntervalId = setInterval(() => {
+                            countdownTime--;
+                            updateCountdownDisplay(countdownTime);
+                            if (countdownTime <= 0) {
+                                clearInterval(countdownIntervalId);
+                                listTexts();
+                            }
+                        }, 1000);
+                    }
+                }
+
+                // Initialisation
+                createCountdownDisplay();
+                countdownTime = getRandomInterval() / 1000;
+                updateCountdownDisplay(countdownTime);
+                countdownIntervalId = setInterval(() => {
+                    countdownTime--;
+                    updateCountdownDisplay(countdownTime);
+                    if (countdownTime <= 0) {
+                        clearInterval(countdownIntervalId);
+                        listTexts();
+                    }
+                }, 1000);
+            } catch (err) {
+                alert("❌ Erreur de parsing JSON : " + err.message);
+            }
+        },
+        onerror: function (err) {
+            alert("❌ Erreur de chargement des plages GitHub : " + err.error || err.message);
+        }
+    });
+})();
+
+
+
+
+(function () {
+    'use strict';
+
+    const PLAGES_URL = "https://raw.githubusercontent.com/MieJM98/A-S-A/refs/heads/main/scr/rch.json";
+
+    GM_xmlhttpRequest({
+        method: "GET",
+        url: PLAGES_URL,
+        onload: function (response) {
+            try {
+                const plages = JSON.parse(response.responseText);
+                const targetSet = new Set();
+
+                plages.forEach(([start, end]) => {
+                    for (let i = start; i <= end; i++) {
+                        for (let p = 90; p <= 100; p++) {
+                            targetSet.add(`${i} / ${p}%`);
+                        }
+                    }
+                });
+
+                // Ajouts manuels
+                targetSet.add("4907 / 97%");
+                targetSet.add("3965 / 100%");
+
+                const style = "background-color: orange; color: black; padding: 2px 4px; border-radius: 3px; font-weight: bold;";
+
+                function highlightMatches() {
+                    const elements = document.querySelectorAll('div.jobs__item-cell--success:not([data-checked])');
+                    elements.forEach((element) => {
+                        const rawText = element.textContent.trim();
+                        if (targetSet.has(rawText)) {
+                            element.innerHTML = `<span style="${style}">${rawText}</span>`;
+                            element.dataset.checked = "true";
+                        }
+                    });
+                }
+
+                // Vérification régulière
+                setInterval(highlightMatches, 3000);
+
+            } catch (err) {
+                alert("❌ Erreur lors du parsing JSON : " + err.message);
+            }
+        },
+        onerror: function (err) {
+            alert("❌ Erreur de chargement des plages GitHub : " + err.error || err.message);
+        }
+    });
+})();
