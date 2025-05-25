@@ -7,6 +7,7 @@
 // @match        https://sproutgigs.com/jobs.php?sort=NEWEST
 // @match        https://sproutgigs.com/jobs.php?category=10&sort=TTR
 // @match        https://sproutgigs.com/jobs.php?category=20&sort=COST
+// @match        https://sproutgigs.com/jobs.php?category=10&level=starter&sort=
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=sproutgigs.com
 // @grant        GM_xmlhttpRequest
 // @connect      raw.githubusercontent.com
