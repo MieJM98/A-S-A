@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         1.1.2-reimanager-All-S
 // @namespace    http://tampermonkey.net/--https://mort.jakartastudio.com/
-// @version      2025.05.26--12:30
+// @version      2025.05.26--12:33
 // @description  try to take over the world!
 // @author       You
 // @match        https://sproutgigs.com/jobs/submit-task.php*
