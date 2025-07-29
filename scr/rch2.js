@@ -1,5 +1,5 @@
 // Liste des termes GitHub à surveiller
-const githubTerms = [
+const terms = [
   "3001 / 92%", // Très actif, souvent posté
   "1005 / 100%", // Parfait, recruteur fiable
   "58 / 95%", // Bon score, pas toujours actif
