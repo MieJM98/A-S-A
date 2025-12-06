@@ -1,5 +1,20 @@
-// @name        https://kyo.iqipedia.com/
-// @version      2025.05.22--12:31
+// ==UserScript==
+// @name         1.1.2-reimanager-All-S
+// @namespace    http://tampermonkey.net/--https://mort.jakartastudio.com/
+// @version      2025.05.26--12:34
+// @description  try to take over the world!
+// @author       You
+// @match        https://sproutgigs.com/jobs/submit-task.php*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=sproutgigs.com
+// @grant        GM_xmlhttpRequest
+// ==/UserScript==
+
+
+
+
+
+// @name         https://kicaumania.net/eng/
+// @version      2025.05.26--14:30
 
 
 (function() {
@@ -50,7 +65,7 @@
     }
 
     // Liste des indices à rechercher dans la page
-    const searchIndices = ["mofo_gasy", "https://rebrand.ly/a12469"];
+    const searchIndices = ["https://rebrand.ly/ad431a", "https://rebrand.ly/ad431a"];
     let hasFilled = false;
 
     // Rechercher un indice dans la page et remplir si trouvé
@@ -63,10 +78,10 @@
             hasFilled = true;
             console.log(`[TAMPER] Indice trouvé : "${index}". Remplissage du formulaire.`);
 
-            getRandomResponses("https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/kyo_.iqipedia_.com/lnk.txt", 1, function(response1) {
+            getRandomResponses("https://raw.githubusercontent.com/MieJM98/A-S-A/refs/heads/main/REGI/kicau_mania_.net--eng/lnk.txt", 1, function(response1) {
                 fillFormWithRandomResponses(response1, 'textarea#proof_1.form-control.alert-on-type-task');
 
-                getRandomResponses("https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/kyo_.iqipedia_.com/stnc.txt", 1, function(response2) {
+                getRandomResponses("https://raw.githubusercontent.com/MieJM98/A-S-A/refs/heads/main/REGI/kicau_mania_.net--eng/stnc.txt", 1, function(response2) {
                     fillFormWithRandomResponses(response2, 'textarea#proof_2.form-control.alert-on-type-task');
 
                     getSourcesFromIndex("https://raw.githubusercontent.com/MieJM98/A-S-A/main/AD/index.txt", function(sources) {
@@ -86,3 +101,4 @@
     }
 
 })();
+
