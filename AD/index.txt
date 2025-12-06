@@ -12,3 +12,4 @@
 12.txt
 13.txt
 14.txt
+www_.tmos_scada_.com---index_.php.txt
