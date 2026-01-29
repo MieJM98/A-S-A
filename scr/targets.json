@@ -1,4 +1,10 @@
+
 {
+  "ui": {
+    "label": "SPR0UT SCAN",
+    "color": "#00ff99"
+  },
+  
   "ranges": [
     {
       "min": 11100,
