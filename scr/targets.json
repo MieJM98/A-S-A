@@ -11,7 +11,7 @@
       "max": 12500,
       "pmin": 99,
       "pmax": 100,
-      "enabled": true
+      "enabled": true,
       "comment": "reimanager"
     },
     {
@@ -19,7 +19,7 @@
       "max": 11100,
       "pmin": 97,
       "pmax": 100,
-      "enabled": true
+      "enabled": true,
       "comment": "Older but reliable"
     },
     {
@@ -27,7 +27,7 @@
       "max": 200,
       "pmin": 83,
       "pmax": 86,
-      "enabled": true
+      "enabled": true,
       "comment": "yews profile"
     },
     {
@@ -35,7 +35,7 @@
       "max": 24100,
       "pmin": 83,
       "pmax": 86,
-      "enabled": false
+      "enabled": false,
       "comment": "yews profile"
     }
 
