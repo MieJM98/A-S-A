@@ -1,0 +1,28 @@
+{
+  "ranges": [
+    {
+      "min": 11100,
+      "max": 19143,
+      "pmin": 95,
+      "pmax": 100,
+      "comment": "Main high success range"
+    },
+    {
+      "min": 100,
+      "max": 11100,
+      "pmin": 97,
+      "pmax": 100,
+      "comment": "Older but reliable"
+    },
+    {
+      "min": 115,
+      "max": 200,
+      "pmin": 83,
+      "pmax": 86,
+      "comment": "yews profile"
+    }
+  ],
+  "manual": [
+    "1114907 / 97%"
+  ]
+}
