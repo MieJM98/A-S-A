@@ -1,23 +1,25 @@
 
 {
   "ui": {
-    "label": "SPR0UT SCAN",
+    "label": "29.01.2025-19.29 : ",
     "color": "#00ff99"
   },
   
   "ranges": [
     {
-      "min": 11100,
-      "max": 19143,
-      "pmin": 95,
+      "min": 12000,
+      "max": 12500,
+      "pmin": 99,
       "pmax": 100,
-      "comment": "Main high success range"
+      "enabled": true
+      "comment": "https://sproutgigs.com/u/reimanager#micro-buying"
     },
     {
       "min": 100,
       "max": 11100,
       "pmin": 97,
       "pmax": 100,
+      "enabled": true
       "comment": "Older but reliable"
     },
     {
@@ -25,8 +27,18 @@
       "max": 200,
       "pmin": 83,
       "pmax": 86,
+      "enabled": true
+      "comment": "yews profile"
+    },
+    {
+      "min": 24000,
+      "max": 24100,
+      "pmin": 83,
+      "pmax": 86,
+      "enabled": false
       "comment": "yews profile"
     }
+
   ],
   "manual": [
     "1114907 / 97%"
