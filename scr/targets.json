@@ -1,7 +1,7 @@
 
 {
   "ui": {
-    "label": "29.01.2025-19.29 : ",
+    "label": "30.01.2025-12.50 : ",
     "color": "#00ff99"
   },
   
@@ -12,32 +12,49 @@
       "pmin": 99,
       "pmax": 100,
       "enabled": true,
-      "comment": "reimanager"
+      "comment": "reimanager-seo"
     },
+
+    
     {
-      "min": 100,
-      "max": 11100,
+      "min": 1100,
+      "max": 1500,
+      "pmin": 98,
+      "pmax": 100,
+      "enabled": false,
+      "comment": "sativa_wahyu-seo"
+    },
+
+    
+    {
+      "min": 24000,
+      "max": 24500,
+      "pmin": 98,
+      "pmax": 100,
+      "enabled": false,
+      "comment": "SulaimanNR-seo"
+    },
+    
+    
+    {
+      "min": 7000,
+      "max": 7500,
       "pmin": 97,
       "pmax": 100,
       "enabled": true,
-      "comment": "Older but reliable"
+      "comment": "Shyguywhy-ytb"
     },
+
+    
     {
       "min": 115,
       "max": 200,
       "pmin": 83,
       "pmax": 86,
       "enabled": true,
-      "comment": "yews profile"
+      "comment": "yews-ytb"
     },
-    {
-      "min": 24000,
-      "max": 24100,
-      "pmin": 98,
-      "pmax": 100,
-      "enabled": false,
-      "comment": "yews profile"
-    }
+
 
   ],
   "manual": [
