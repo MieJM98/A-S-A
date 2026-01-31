@@ -15,7 +15,6 @@
       "comment": "reimanager-seo"
     },
 
-    
     {
       "min": 1100,
       "max": 1500,
@@ -26,6 +25,16 @@
     },
 
     
+    {
+      "min": 660,
+      "max": 700,
+      "pmin": 99,
+      "pmax": 100,
+      "enabled": true,
+      "comment": "NSXCODE-seo"
+    },
+    
+
     {
       "min": 24000,
       "max": 24500,
@@ -45,6 +54,14 @@
       "comment": "Shyguywhy-ytb"
     },
 
+    {
+      "min": 3755,
+      "max": 4000,
+      "pmin": 97,
+      "pmax": 100,
+      "enabled": true,
+      "comment": "ytmania151-ytb"
+    },
     
     {
       "min": 115,
