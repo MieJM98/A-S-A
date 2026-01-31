@@ -20,7 +20,7 @@
       "max": 1500,
       "pmin": 98,
       "pmax": 100,
-      "enabled": false,
+      "enabled": true,
       "comment": "sativa_wahyu-seo"
     },
 
@@ -30,7 +30,7 @@
       "max": 700,
       "pmin": 99,
       "pmax": 100,
-      "enabled": true,
+      "enabled": false,
       "comment": "NSXCODE-seo"
     },
     
