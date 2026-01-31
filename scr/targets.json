@@ -62,6 +62,15 @@
       "enabled": true,
       "comment": "ytmania151-ytb"
     },
+
+    {
+      "min": 3000,
+      "max": 2356,
+      "pmin": 97,
+      "pmax": 100,
+      "enabled": true,
+      "comment": "growthpartner-ytb"
+    },
     
     {
       "min": 115,
