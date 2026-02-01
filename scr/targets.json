@@ -1,99 +1,14 @@
-
 {
-  "ui": {
-    "label": "01.02.2025-17.00 : ",
-    "color": "#00ff99"
-  },
-  
   "ranges": [
-    {
-      "min": 12000,
-      "max": 12500,
-      "pmin": 99,
-      "pmax": 100,
-      "enabled": true,
-      "comment": "reimanager-seo"
-    },
-
-    {
-      "min": 1100,
-      "max": 1500,
-      "pmin": 98,
-      "pmax": 100,
-      "enabled": true,
-      "comment": "sativa_wahyu-seo"
-    },
-
-    
-    {
-      "min": 660,
-      "max": 700,
-      "pmin": 99,
-      "pmax": 100,
-      "enabled": false,
-      "comment": "NSXCODE-seo"
-    },
-    
-
-    {
-      "min": 24000,
-      "max": 24500,
-      "pmin": 98,
-      "pmax": 100,
-      "enabled": false,
-      "comment": "SulaimanNR-seo"
-    },
-    
-    
-    {
-      "min": 7000,
-      "max": 7500,
-      "pmin": 97,
-      "pmax": 100,
-      "enabled": true,
-      "comment": "Shyguywhy-ytb"
-    },
-
-    {
-      "min": 3755,
-      "max": 4000,
-      "pmin": 97,
-      "pmax": 100,
-      "enabled": true,
-      "comment": "ytmania151-ytb"
-    },
-
-    {
-      "min": 2356,
-      "max": 3000,
-      "pmin": 97,
-      "pmax": 100,
-      "enabled": true,
-      "comment": "growthpartner-ytb"
-    },
-
-        {
-      "min": 419,
-      "max": 500,
-      "pmin": 94,
-      "pmax": 97,
-      "enabled": true,
-      "comment": "Johndoe1998012-ytb"
-    },
-
-    { "min": 1327, "max": 1500, "pmin": 96, "pmax": 98, "enabled": true, "comment": "montooytje-ytb" },
-
-    
-    {
-      "min": 115,
-      "max": 200,
-      "pmin": 83,
-      "pmax": 86,
-      "enabled": true,
-      "comment": "yews-ytb"
-    }
-
-
+    { "comment": "reimanager-seo", "min": 12000, "max": 12500, "pmin": 99, "pmax": 100, "enabled": true },
+    { "comment": "sativa_wahyu-seo", "min": 1100, "max": 1500, "pmin": 98, "pmax": 100, "enabled": true },
+    { "comment": "NSXCODE-seo", "min": 660, "max": 700, "pmin": 99, "pmax": 100, "enabled": false },
+    { "comment": "SulaimanNR-seo", "min": 24000, "max": 24500, "pmin": 98, "pmax": 100, "enabled": false },
+    { "comment": "Shyguywhy-ytb", "min": 7000, "max": 7500, "pmin": 97, "pmax": 100, "enabled": true },
+    { "comment": "ytmania151-ytb", "min": 3755, "max": 4000, "pmin": 97, "pmax": 100, "enabled": true },
+    { "comment": "growthpartner-ytb", "min": 2356, "max": 3000, "pmin": 97, "pmax": 100, "enabled": true },
+    { "comment": "Johndoe1998012-ytb", "min": 419, "max": 500, "pmin": 94, "pmax": 97, "enabled": true },
+    { "comment": "montooytje-ytb", "min": 1327, "max": 1500, "pmin": 96, "pmax": 98, "enabled": true },
+    { "comment": "yews-ytb", "min": 115, "max": 200, "pmin": 83, "pmax": 86, "enabled": true }
   ]
-
 }
