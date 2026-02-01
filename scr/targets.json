@@ -1,4 +1,8 @@
 {
+  "ui": {
+    "label": "01.02.2025-18.00 : ",
+    "color": "#00ff99"
+  },
   "ranges": [
     { "comment": "reimanager-seo", "min": 12000, "max": 12500, "pmin": 99, "pmax": 100, "enabled": true },
     { "comment": "sativa_wahyu-seo", "min": 1100, "max": 1500, "pmin": 98, "pmax": 100, "enabled": true },
