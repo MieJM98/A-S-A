@@ -64,12 +64,21 @@
     },
 
     {
-      "min": 3000,
-      "max": 2356,
+      "min": 2356,
+      "max": 3000,
       "pmin": 97,
       "pmax": 100,
       "enabled": true,
       "comment": "growthpartner-ytb"
+    },
+
+        {
+      "min": 419,
+      "max": 500,
+      "pmin": 94,
+      "pmax": 97,
+      "enabled": true,
+      "comment": "Johndoe1998012-ytb"
     },
     
     {
