@@ -1,6 +1,6 @@
 {
   "ui": {
-    "label": "04.02.2025-19.00 : ",
+    "label": "05.02.2025-00.00 : ",
     "color": "#00ff99"
   },
   "ranges": [
@@ -15,6 +15,7 @@
     { "comment": "montooytje-ytb",     "min": 1327,  "max": 1500,  "pmin": 96, "pmax": 100,  "enabled": true },
     { "comment": "goat2004-ytb",       "min": 89,    "max": 200,   "pmin": 87, "pmax": 100,  "enabled": true },
     { "comment": "shocksss-ytb",       "min": 12,    "max": 200,   "pmin": 16, "pmax": 100,  "enabled": true },
+    { "comment": "Daanoquex-ytb",      "min": 688,   "max": 1000,  "pmin": 95, "pmax": 100,  "enabled": true },
     { "comment": "yews-ytb",           "min": 115,   "max": 200,   "pmin": 83, "pmax": 100,  "enabled": true }
 
     
