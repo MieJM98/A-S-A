@@ -3,7 +3,9 @@
     "ads": "a   ds",
     "adver": "a   dver",
     "banner": "ban  ner",
-    "ad&": "a    d&"
+    "ad&": "a    d&",
+    "+Ads&": "+A   ds&",
+    "        ": "         ",
     "-ad-": "-a   d-"
     
   }
