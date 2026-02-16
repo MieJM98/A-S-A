@@ -1,14 +1,12 @@
 {
   "replace": {
-    "ads": "a   ds",
-    "adver": "a   dver",
-    "banner": "ban  ner",
-    "ad&": "a    d&",
     "+Ads&": "+A   ds&",
     "adwords": "a   dwords",
+    "-ad-": "-a   d-",
     "_ad=": "_a    d=",
-    "        ": "         ",
-    "-ad-": "-a   d-"
-    
+    "ad&": "a    d&",
+    "adver": "a   dver",
+    "banner": "ban  ner",
+    "ads": "a   ds"
   }
 }
