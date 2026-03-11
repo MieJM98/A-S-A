@@ -1,8 +1,14 @@
 {
-  "manual": [
-    "Maccublessed",    // 🧡 Orange
-    "Elker109",      // 🧡 Orange
-    "Recomaze",      // 💙 Bleu
-    "roberto1516"       // 💙 Bleu
+  "orange": [
+    "Maccublessed",
+    "WorkerKing",
+    "TaskMaster",
+    "SuperBuyer"
+  ],
+  "bleu": [
+    "Maccublessed",
+    "Elker109",
+    "Recomaze",
+    "roberto1516"
   ]
 }
