@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         reimanager (Delay + Full Load)
 // @namespace    http://tampermonkey.net/
-// @version      5.1
+// @version      6.1
 // @description  Autofill avec attente chargement + délais humains
 // @match        https://sproutgigs.com/jobs/submit-task.php*
 // @grant        GM_xmlhttpRequest
@@ -90,6 +90,60 @@
             stnc: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/aki_.ahli_nesia_.com/stnc.txt"
         },
 
+        {
+            // https://fuyu.ahlinesia.com/
+            indices: ["https://rebrand.ly/0qxiiqa", "https://cutt.ly/Er1XQAbN"],
+            lnk: "https://raw.githubusercontent.com/MieJM98/A-S-A/refs/heads/main/REGI/fuyu_.ahli_nesia_.com/lnk.txt",
+            stnc: "https://raw.githubusercontent.com/MieJM98/A-S-A/refs/heads/main/REGI/fuyu_.ahli_nesia_.com/sntc.txt"
+        },
+
+
+        // ==================== uni.jakartastudio.com ====================
+        {
+            // https://uni.jakartastudio.com/
+            indices: ["https://rebrand.ly/4e60da", "https://bit.ly/4hhhxchdxnhchncnhchgch"],
+            lnk: "https://raw.githubusercontent.com/MieJM98/A-S-A/refs/heads/main/REGI/uni_.jaka_rta_studio_.com/lnk.txt",
+            stnc: "https://raw.githubusercontent.com/MieJM98/A-S-A/refs/heads/main/REGI/aki._caram_antap_.com/stnc.txt"
+        },
+
+        // ==================== natsu.putarmuter.com ====================
+        {
+            // https://natsu.putarmuter.com
+            indices: ["https://rebrand.ly/ntu9ujz", "l5eyu21", "bbbbb", "bbbbbb"],
+            lnk: "https://pastebin.com/raw/vMtJUQMY",
+            stnc: "https://pastebin.com/raw/WZDb4YjN"
+        },
+        // ==================== ryu.noos.co.id ====================
+        {
+            // https://ryu.noos.co.id/
+            indices: ["https://rebrand.ly/1x6jnm3", "nnnnnnnnn", "mofogasy"],
+            lnk: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/ryu._noos._co_.id.txt",
+            stnc: "https://pastebin.com/raw/WZDb4YjN"
+        },
+
+
+        // ==================== otodrift.com ====================
+        {
+            // https://haru.otodrift.com/
+            indices: ["https://rebrand.ly/oaztl8h", "https://rebrand.ly/oaz___tl8h"],
+            lnk: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/haru_.oto_drift_.com/lnk.txt",
+            stnc: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/haru_.oto_drift_.com/stnc.txt"
+        },
+        // ==================== jasapenulisartikel.my.id ====================
+        {
+            // https://natsu.jasapenulisartikel.my.id/
+            indices: ["https://cutt.ly/SrFoT1G1", "https://cutt.ly/SrF____oT1G1"],
+            lnk: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/natsu_.jasape_nulisar_tikel_.my_.id/lnk.txt",
+            stnc: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/natsu_.jasape_nulisar_tikel_.my_.id/stnc.txt"
+        },
+        // ==================== ruangteknisi.com ====================
+        {
+            // https://natsu.ruangteknisi.com/
+            indices: ["40642d", "07687f", "a3ec90", "7c273c", "https://rebrand.ly/40642d"],
+            lnk: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/natsu_.rua_ngt_eknisi._com.txt",
+            stnc: "https://pastebin.com/raw/WZDb4YjN"
+        },
+
         // ==================== apola.co ====================
         {
             // https://apola.co/eco/
@@ -107,11 +161,10 @@
         // ==================== caramantap.com ====================
         {
             // https://aki.caramantap.com/
-            indices: ["msh5yrd", "xxxxxxxxx", "sssssssss"],
-            lnk: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/aki._caram_antap_.com.txt",
-            stnc: "https://pastebin.com/raw/WZDb4YjN"
+            indices: ["https://cutt.ly/DrHkvmid", "https://cutt.ly/Qr1XAOUW"],
+            lnk: "https://raw.githubusercontent.com/MieJM98/A-S-A/refs/heads/main/REGI/aki._caram_antap_.com/lnk.txt",
+            stnc: "https://raw.githubusercontent.com/MieJM98/A-S-A/refs/heads/main/REGI/aki._caram_antap_.com/stnc.txt"
         },
-
         // ==================== combinesia.web.id ====================
         {
             // https://combinesia.web.id/eng/
@@ -303,6 +356,14 @@
             stnc: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/aki_.luviz_hea_.com/stnc.txt"
         },
 
+        // ==================== masa.biz.id ====================
+        {
+            // https://kisetsu.masa.biz.id/
+            indices: ["e3cda5", "https://cutt.ly/PrJuIrS9", "sssssssss"],
+            lnk: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/kisetsu_.masa._biz_.id.txt",
+            stnc: "https://pastebin.com/raw/WZDb4YjN"
+        },
+
         // ==================== maklumatkerja.com ====================
         {
             // https://maklumatkerja.com/eng/
@@ -388,6 +449,9 @@
             stnc: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/vivo_global_.id--eco/stnc.txt"
         }
     ];
+
+
+
 
     // ===== ATTENDRE PAGE COMPLETE =====
 
