@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         reimanager (Delay + Full Load)
 // @namespace    http://tampermonkey.net/
-// @version      4.1
+// @version      5.1
 // @description  Autofill avec attente chargement + délais humains
 // @match        https://sproutgigs.com/jobs/submit-task.php*
 // @grant        GM_xmlhttpRequest
