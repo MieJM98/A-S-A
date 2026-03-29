@@ -18,7 +18,7 @@
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    function randomDelay(min = 5000, max = 10000) {
+    function randomDelay(min = 10000, max = 15000) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
@@ -146,6 +146,12 @@
             indices: ["https://rebrand.ly/6ec886", "https://rebrand.ly/c.t8.r.f.5i"],
             lnk: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/dunia_kicau_.net--studyus/lnk.txt",
             stnc: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/aki_.luviz_hea_.com/stnc.txt"
+        },
+        {
+            //  https://haru2.duniakicau.net/
+            indices: ["https://cutt.ly/Gr2E0NQE", "https://cutt.ly/Gr2E  0NQE"],
+            lnk: "https://raw.githubusercontent.com/MieJM98/A-S-A/refs/heads/main/REGI/dunia_kicau/har_u2.dunia_kicau.net/lnk.txt",
+            stnc: "https://raw.githubusercontent.com/MieJM98/A-S-A/refs/heads/main/REGI/dunia_kicau/har_u2.dunia_kicau.net/stnc.txt"
         },
 
         // ==================== fataya.co.id ====================
