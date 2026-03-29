@@ -126,6 +126,13 @@
             stnc: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/aki_.luviz_hea_.com/stnc.txt"
         },
 
+        {
+            // https://eco.combinesia.web.id/
+            indices: ["https://rebrand.ly/pyrixzc", "https://rebrand.ly/pyri_____xzc"],
+            lnk: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/eco_.combi_nesia_.web_.id/lnk.txt",
+            stnc: "https://pastebin.com/raw/WZDb4YjN"
+        },
+
         // ==================== dinas.id ====================
         {
             // https://dinas.id/eng/
@@ -319,14 +326,14 @@
             lnk: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/www_.mayuf_.id--studyus/lnk.txt",
             stnc: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/aki_.luviz_hea_.com/stnc.txt"
         },
-        
+
         {
             // https://eco.mayuf.id/
             indices: ["https://rebrand.ly/fb9177", "https://rebrand.ly/fb9______177"],
             lnk: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/eco_.mayuf_.id/lnk.txt",
             stnc: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/eco_.mayuf_.id/stnc.txt"
         },
-        
+
         // ==================== putarmuter.com ====================
         {
             // https://fuyu.putarmuter.com/
