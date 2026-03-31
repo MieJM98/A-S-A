@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Image hosts downloader (multi hosts) AUTO BOTTOM
 // @namespace    https://tampermonkey.net/
-// @version      2.8
+// @version      2.9
 // @description  Bouton + aperçu + téléchargement auto + bouton ouvrir image
 // @match        https://prnt.sc/*
 // @match        https://ibb.co/*
