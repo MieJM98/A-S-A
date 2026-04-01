@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         reimanager (Delay + Full Load)
 // @namespace    http://tampermonkey.net/
-// @version      6.1
+// @version      6.2
 // @description  Autofill avec attente chargement + délais humains
 // @match        https://sproutgigs.com/jobs/submit-task.php*
 // @grant        GM_xmlhttpRequest
@@ -83,6 +83,8 @@
             lnk: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/ahli_nesia_.com--ny/lnk.txt",
             stnc: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/aki_.luviz_hea_.com/stnc.txt"
         },
+
+
         {
             // https://aki.ahlinesia.com/
             indices: ["https://rebrand.ly/gnjl7t7", "https://rebrand.ly/0c0afc"],
@@ -104,6 +106,14 @@
             indices: ["https://rebrand.ly/4e60da", "https://bit.ly/4hhhxchdxnhchncnhchgch"],
             lnk: "https://raw.githubusercontent.com/MieJM98/A-S-A/refs/heads/main/REGI/uni_.jaka_rta_studio_.com/lnk.txt",
             stnc: "https://raw.githubusercontent.com/MieJM98/A-S-A/refs/heads/main/REGI/aki._caram_antap_.com/stnc.txt"
+        },
+
+        // ==================== kisetsu.putarmuter.com ====================
+        {
+            // https://kisetsu.putarmuter.com/
+            indices: ["https://rebrand.ly/8bfc7f", "16cc58"],
+            lnk: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/kise_tsu.put_armut_er.com.txt",
+            stnc: "https://pastebin.com/raw/WZDb4YjN"
         },
 
         // ==================== natsu.putarmuter.com ====================
