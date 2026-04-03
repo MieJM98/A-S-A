@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         reimanager (Delay + Full Load)
 // @namespace    http://tampermonkey.net/
-// @version      6.2
+// @version      6.3
 // @description  Autofill avec attente chargement + délais humains
 // @match        https://sproutgigs.com/jobs/submit-task.php*
 // @grant        GM_xmlhttpRequest
@@ -98,7 +98,13 @@
             lnk: "https://raw.githubusercontent.com/MieJM98/A-S-A/refs/heads/main/REGI/fuyu_.ahli_nesia_.com/lnk.txt",
             stnc: "https://raw.githubusercontent.com/MieJM98/A-S-A/refs/heads/main/REGI/fuyu_.ahli_nesia_.com/sntc.txt"
         },
-
+        // ==================== haru.putarmuter.com ====================
+        {
+            // https://haru.putarmuter.com/
+            indices: ["https://rebrand.ly/8ebfdc", "lprdvcm", "mofogasy"],
+            lnk: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/haru_.put_arm_uter._com.txt",
+            stnc: "https://pastebin.com/raw/WZDb4YjN"
+        },
 
         // ==================== uni.jakartastudio.com ====================
         {
