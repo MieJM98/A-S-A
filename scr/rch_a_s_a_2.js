@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SproutGigs - Buyer Highlighter (LOCAL DATA)
 // @namespace    http://tampermonkey.net/
-// @version      2026-03-29--04:00
+// @version      2026-04-12--18:00
 // @description  Surligne les jobs avec liste locale (orange + bleu)
 // @match        https://sproutgigs.com/jobs.php
 // @grant        none
