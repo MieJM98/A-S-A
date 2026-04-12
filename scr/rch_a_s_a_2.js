@@ -23,6 +23,7 @@
             "yews",
             "analt2028",
             "Ckanti",
+            "tentra",
             "sativa_wahyu1"
         ],
         bleu: [
