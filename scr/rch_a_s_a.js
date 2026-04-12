@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         regi combo stephanie - Buyer Highlighter Dual + Text Scan
 // @namespace    http://tampermonkey.net/
-// @version      2026-03-28--04:00
+// @version      2026-04-12--18:00
 // @description  Highlight buyers + détection texte %
 // @match        https://sproutgigs.com/jobs.php?category=20&sort=COST
 // @match        https://sproutgigs.com/jobs.php?sort=NEWEST
