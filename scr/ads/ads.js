@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Replace words ads from GitHub (proof_X) v6.0
 // @namespace    http://tampermonkey.net/
-// @version      6.1
+// @version      6.2
 // @description  Remplace dynamiquement les mots via words_ads.json (GitHub) avec cache local
 // @match        https://sproutgigs.com/jobs/submit-task.php*
 // @run-at       document-end
