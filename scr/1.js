@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         reimanager (Delay + Full Load)
 // @namespace    http://tampermonkey.net/
-// @version      6.3
+// @version      6.4
 // @description  Autofill avec attente chargement + délais humains
 // @match        https://sproutgigs.com/jobs/submit-task.php*
 // @grant        GM_xmlhttpRequest
@@ -316,8 +316,8 @@
         {
             // https://kelasip.com/eng/
             indices: ["https://rebrand.ly/979768", "***_****_***"],
-            lnk: "https://raw.githubusercontent.com/MieJM98/A-S-A/main/REGI/kela_sip_.com--eng/lnk.txt",
-            stnc: "https://pastebin.com/raw/WZDb4YjN"
+            lnk: "https://raw.githubusercontent.com/MieJM98/A-S-A/refs/heads/main/REGI/kela_sip_.com--eng/lnk.txt",
+            stnc: "https://raw.githubusercontent.com/MieJM98/A-S-A/refs/heads/main/REGI/kela_sip_.com--eng/stnc.txt"
         },
 
         // ==================== kicaumania.net ====================
