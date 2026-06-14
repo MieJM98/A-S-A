@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Replace words ads from GitHub (proof_X) v6.0
+// @name         Replace words ads from GitHub (proof_X) v6.3
 // @namespace    http://tampermonkey.net/
-// @version      6.2
+// @version      6.3
 // @description  Remplace dynamiquement les mots via words_ads.json (GitHub) avec cache local
 // @match        https://sproutgigs.com/jobs/submit-task.php*
 // @run-at       document-end
@@ -10,7 +10,6 @@
 // @grant        GM_setValue
 // @grant        GM_getValue
 // ==/UserScript==
-
 
 (function () {
     'use strict';
@@ -24,32 +23,32 @@
     let replacements = {};
     let ready = false;
 
-    // Vérifie la version distante et charge le dictionnaire si nécessaire
     function checkVersionAndLoad(callback) {
         GM_xmlhttpRequest({
             method: 'GET',
-            url: VERSION_URL,
+            url: VERSION_URL + '?t=' + Date.now(),
             onload: function (resp) {
                 try {
                     const versionData = JSON.parse(resp.responseText);
                     const remoteVersion = versionData.version || '0.0';
+
                     const localVersion = GM_getValue(VERSION_KEY, null);
                     const cachedWords = GM_getValue(CACHE_KEY, null);
 
                     if (localVersion === remoteVersion && cachedWords) {
-                        // Même version → utiliser le cache
                         replacements = cachedWords;
                         ready = true;
-                        console.log(`⚡ Version ${remoteVersion} (cache) – mots chargés depuis le cache`);
+                        console.log('⚡ Cache utilisé - version', remoteVersion);
+
                         if (callback) callback();
                         return;
                     }
 
-                    // Version différente ou absente → télécharger le dictionnaire
-                    console.log(`📦 Nouvelle version ${remoteVersion} détectée, téléchargement du dictionnaire...`);
+                    console.log('📦 Nouvelle version détectée :', remoteVersion);
                     loadWordsFromGitHub(remoteVersion, callback);
+
                 } catch (e) {
-                    console.error('❌ Erreur dans version_ads.json :', e);
+                    console.error('❌ Erreur version_ads.json', e);
                     fallbackToCache(callback);
                 }
             },
@@ -63,87 +62,163 @@
     function loadWordsFromGitHub(version, callback) {
         GM_xmlhttpRequest({
             method: 'GET',
-            url: WORDS_URL,
+            url: WORDS_URL + '?t=' + Date.now(),
             onload: function (resp) {
                 try {
                     const json = JSON.parse(resp.responseText);
-                    const words = json.replace || json || {};
-                    replacements = words;
-                    GM_setValue(CACHE_KEY, words);
+
+                    replacements = json.replace || json || {};
+
+                    GM_setValue(CACHE_KEY, replacements);
                     GM_setValue(VERSION_KEY, version);
+
                     ready = true;
-                    console.log(`✅ Dictionnaire version ${version} chargé depuis GitHub`);
+
+                    console.log('✅ Dictionnaire chargé depuis GitHub');
+
                 } catch (e) {
-                    console.error('❌ Erreur dans words_ads.json :', e);
+                    console.error('❌ Erreur words_ads.json', e);
                     fallbackToCache(callback);
                 }
+
                 if (callback) callback();
             },
             onerror: function () {
                 console.error('❌ Impossible de charger words_ads.json');
                 fallbackToCache(callback);
+
+                if (callback) callback();
             }
         });
     }
 
     function fallbackToCache(callback) {
         const cachedWords = GM_getValue(CACHE_KEY, null);
+
         if (cachedWords) {
             replacements = cachedWords;
             ready = true;
-            console.warn('⚠️ Utilisation du cache existant (vérification version impossible)');
+            console.warn('⚠️ Utilisation du cache local');
         } else {
-            console.error('❌ Aucun cache disponible, les remplacements ne fonctionneront pas');
+            console.error('❌ Aucun dictionnaire disponible');
         }
+
         if (callback) callback();
     }
 
-    // Remplacement des mots
     function cleanText(text) {
-        if (!ready || Object.keys(replacements).length === 0) return text;
-        const sortedKeys = Object.keys(replacements).sort((a, b) => b.length - a.length);
-        let result = text;
-        for (const word of sortedKeys) {
-            const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            const regex = new RegExp(escaped, 'gi');
-            result = result.replace(regex, replacements[word]);
+        if (!ready || !Object.keys(replacements).length) {
+            return text;
         }
+
+        const sortedKeys = Object.keys(replacements)
+            .sort((a, b) => b.length - a.length);
+
+        let result = text;
+
+        for (const word of sortedKeys) {
+
+            const replacement = replacements[word];
+
+            const escaped = word.replace(
+                /[.*+?^${}()|[\]\\]/g,
+                '\\$&'
+            );
+
+            let regex;
+
+            // Mot simple
+            if (/^[a-zA-Z0-9_]+$/.test(word)) {
+                regex = new RegExp(`\\b${escaped}\\b`, 'gi');
+            }
+            // Expression spéciale
+            else {
+                regex = new RegExp(escaped, 'gi');
+            }
+
+            result = result.replace(regex, replacement);
+        }
+
         return result;
     }
 
-    // Écouteur sur les textarea
+    function processTextarea(textarea) {
+        const original = textarea.value;
+        const cleaned = cleanText(original);
+
+        if (original !== cleaned) {
+            const pos = textarea.selectionStart;
+
+            textarea.value = cleaned;
+
+            try {
+                textarea.selectionStart = pos;
+                textarea.selectionEnd = pos;
+            } catch {}
+
+            textarea.dispatchEvent(
+                new Event('change', { bubbles: true })
+            );
+        }
+    }
+
     function attachListener(textarea) {
-        if (textarea.dataset.wordlistener) return;
-        textarea.dataset.wordlistener = '1';
-        textarea.addEventListener('input', function () {
+
+        if (textarea.dataset.adsWordListener) {
+            return;
+        }
+
+        textarea.dataset.adsWordListener = '1';
+
+        textarea.addEventListener('input', function (e) {
+
             if (!ready) return;
-            const start = this.selectionStart;
-            const end = this.selectionEnd;
-            const original = this.value;
-            const cleaned = cleanText(original);
-            if (original !== cleaned) {
-                this.value = cleaned;
-                this.selectionStart = start;
-                this.selectionEnd = end;
-                this.dispatchEvent(new Event('change', { bubbles: true }));
+
+            const char = e.data || '';
+
+            const endOfWord =
+                char === ' ' ||
+                char === '\n' ||
+                char === '\t' ||
+                /[.,!?;:()[\]{}]/.test(char);
+
+            if (!endOfWord) {
+                return;
             }
+
+            processTextarea(this);
+        });
+
+        textarea.addEventListener('paste', function () {
+            setTimeout(() => {
+                processTextarea(this);
+            }, 50);
+        });
+
+        textarea.addEventListener('blur', function () {
+            processTextarea(this);
         });
     }
 
     function scan() {
-        const textareas = document.querySelectorAll('textarea[id^="proof_"]');
-        console.log(`🔍 ${textareas.length} textarea(s) trouvé(s)`);
-        textareas.forEach(attachListener);
+        document
+            .querySelectorAll('textarea[id^="proof_"]')
+            .forEach(attachListener);
     }
 
-    // Démarrage
     checkVersionAndLoad(() => {
         scan();
     });
 
-    // Surveillance des ajouts dynamiques
     const observer = new MutationObserver(() => {
-        if (ready) scan();
+        if (ready) {
+            scan();
+        }
     });
-    observer.observe(document.body, { childList: true, subtree: true });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+
 })();
