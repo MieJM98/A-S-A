@@ -1,7 +1,7 @@
 {
   "ranges": [
-    { "start": 12600, "end": 13600, "percentages": [99, 100] },
-    { "start": 1230, "end": 1800, "percentages": [99, 100] }
+    { "start": 12690, "end": 12990, "percentages": [99, 100] },
+    { "start": 1133, "end": 1300, "percentages": [99, 100] }
   ],
   "manual": [ "70 / 39%" ]
 }
